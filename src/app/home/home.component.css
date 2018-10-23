@@ -1,0 +1,75 @@
+.banner {
+  color: #fff;
+  margin-bottom: 2rem;
+  background: #5cb85c;
+  margin-top: 1rem;
+  box-shadow: inset 0 8px 8px -8px rgba(134, 121, 121, 0.3), inset 0 -8px 8px -8px rgba(0, 0, 0, .3);
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  font-weight: 700;
+  text-align: center;
+  font-size: 3.5rem;
+  padding-bottom: .5rem;
+}
+p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.col-md-3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.sidebar {
+  padding: 5px 10px 10px;
+  background: #f3f3f3;
+  border-radius: 4px;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.sidebar p {
+
+  color: #818a91;
+}
+
+
+.tag-default {
+  color: #fff;
+  font-size: .8rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: .2rem;
+  display: inline-block;
+  background-color: #818a91;
+}
+.tag-pill {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem;
+}
+a {
+  color: #5cb85c;
+  text-decoration: none;
+}

@@ -1,0 +1,69 @@
+.article-preview {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  padding: 1.5rem 0;
+}
+
+div {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.article-preview .preview-link ul {
+  float: right;
+  max-width: 50%;
+  vertical-align: top;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+  border-radius: 10px;
+  list-style-position: inside;
+  border: 1px solid black;
+}
+
+.tag-list {
+  padding-left: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul,
+menu,
+dir {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.tag-default {
+  color: #fff;
+  font-size: .8rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: .2rem;
+  display: inline-block;
+  background-color: #818a91;
+}
+.tag-pill {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem;
+  border-color: transparent;
+}

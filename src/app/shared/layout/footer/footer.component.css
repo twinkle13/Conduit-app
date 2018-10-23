@@ -1,0 +1,41 @@
+footer {
+  background: #f3f3f3;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  box-sizing: inherit;
+  position: relative;
+}
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: source sans pro,sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+  display: block;
+  box-sizing: inherit;
+}
+a {
+  color: #5cb85c;
+  text-decoration: none;
+  background-color: transparent;
+  touch-action: manipulation;
+}
+.logo-font {
+  vertical-align: middle;
+  font-family: titillium web,sans-serif;
+  font-weight: bold;
+}
+.attribution{
+vertical-align: middle;
+margin-left: 10px;
+font-size: .8rem;
+color: #bbb;
+font-weight: 300;
+}

@@ -1,0 +1,17 @@
+<div class="article-preview">
+    <app-article-meta [article]="article">
+
+    </app-article-meta>
+
+    <a [routerLink]="['/article', article.slug]" class="preview-link">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+      <span>Read more...</span>
+      <ul class="tag-list">
+        <li class="tag-default tag-pill"
+          *ngFor="let tag of article.tagList">
+          {{ tag }}
+        </li>
+      </ul>
+    </a>
+  </div>
