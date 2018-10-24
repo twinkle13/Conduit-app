@@ -49,22 +49,21 @@ export class ArticlesService {
 
   save(article): Observable<Article> {
     // If we're updating an existing article
-    if (article.slug) {
+    console.log('article -> ');
+    console.log(article);
+    console.log(article.slug);
+
+    if (article.slug !== undefined) {
+      console.log('here');
+      console.log(article);
       return this.apiService.put('/articles/' + article.slug, {article: article})
              .pipe(map(data => data.article));
 
     // Otherwise, create a new article
     } else {
-      return this.apiService.post('/articles/', {article: article})
+      return this.apiService.post('/articles/', article)
              .pipe(map(data => data.article));
     }
   }
 
-  favorite(slug): Observable<Article> {
-    return this.apiService.post('/articles/' + slug + '/favorite');
-  }
-
-  unfavorite(slug): Observable<Article> {
-    return this.apiService.delete('/articles/' + slug + '/favorite');
-  }
 }

@@ -1,3 +1,5 @@
+import { NewArticleComponent } from './new-article/new-article.component';
+import { CurrentUserResolverService } from './shared/services/current-user-resolver.service';
 import { ProfileResolverService } from './shared/services/profile-resolver.service';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticleResolverService } from './shared/services/article-resolver.service';
@@ -11,7 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
@@ -25,7 +27,8 @@ const routes: Routes = [
     path: 'article/:slug',
     component: ArticleComponent,
     resolve: {
-      article: ArticleResolverService
+      article: ArticleResolverService,
+      user: CurrentUserResolverService
     }
 
   },
@@ -33,14 +36,23 @@ const routes: Routes = [
     path: 'profile/:username',
     component: ProfileComponent,
     resolve: {
-      article: ProfileResolverService
+      profile: ProfileResolverService,
+      user: CurrentUserResolverService
     }
 
-  }
+  },
+  {
+    path: 'newarticle/:slug',
+    component: NewArticleComponent
+  },
+  {
+     path: 'newarticle',
+     component: NewArticleComponent
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -6,15 +6,22 @@ import { Injectable } from '@angular/core';
 export class JwtService {
 
   constructor() { }
-  getToken(): String {
+  getToken(): string {
     return window.localStorage['token'];
   }
+  getUsername(): string {
+    return window.localStorage['username'];
+  }
 
-  saveToken(token: String) {
+  saveToken(token: string) {
     window.localStorage['token'] = token;
+  }
+  saveUsername(username: string) {
+    window.localStorage['username'] = username;
   }
 
   destroyToken() {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('username');
   }
 }

@@ -29,7 +29,6 @@ export class ArticleComponent implements OnInit {
     private userService: UserService) { }
 
   ngOnInit() {
-    console.log('entered' + this.route.toString() + this.route.snapshot.url[1].path );
     this.route.data.subscribe(
       (data: { article: Article }) => {
         this.article = data.article;
@@ -48,7 +47,14 @@ export class ArticleComponent implements OnInit {
           this.canModify = (this.currentUser.username === this.article.author.username);
         }
       );
-      console.log( 'úser-----' + this.userService.getCurrentUser().username );
+      this.route.data.subscribe(
+      (data: any) => {
+        this.currentUser = data.user.user;
+        console.log( data);
+        console.log(this.currentUser.username + '===' + this.article.author.username);
+        this.canModify = (this.currentUser.username === this.article.author.username);
+      }
+    );
   }
   onToggleFavorite(favorited: boolean) {
     this.article.favorited = favorited;

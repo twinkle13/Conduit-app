@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { ProfileService } from './profile.service';
 import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -18,8 +19,20 @@ export class ProfileResolverService implements Resolve<Profile> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
+    console.log('profile2--------> ');
 
-    return this.profilesService.get(route.params['username']);
+    return this.profilesService.get(route.params['username'])
+    .pipe(map(
+      data => {
+        console.log('profile3--------> ');
+        console.log(data);
+        return data;
+      },
+      err => {
+        console.log(err);
+      }
+    ));
+
 
   }
 }

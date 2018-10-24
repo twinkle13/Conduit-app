@@ -35,6 +35,7 @@ export class UserService {
 
   setAuth(user: User) {
     this.jwtService.saveToken(user.token);
+    this.jwtService.saveUsername(user.username);
     this.currentUserSubject.next(user);
     console.log( 'set user----' + this.currentUserSubject.value.username);
     this.isAuthenticatedSubject.next(true);
@@ -58,8 +59,22 @@ export class UserService {
     ));
   }
 
-  getCurrentUser(): User {
-    return this.currentUserSubject.value;
+
+  getCurrentUser(): Observable<User> {
+    return this.apiService.get('/user')
+      .pipe(map(
+        data => {
+          console.log(data);
+          return data;
+        }
+      )
+      );
+  }
+  getUsername(): string {
+    return this.jwtService.getUsername();
+  }
+  getToken(): string {
+    return this.jwtService.getToken();
   }
 
   update(user): Observable<User> {

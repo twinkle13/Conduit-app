@@ -20,16 +20,23 @@ export class ProfileComponent implements OnInit {
     isUser: boolean;
 
   ngOnInit() {
+    console.log('profile1--------> ');
     this.route.data.subscribe(
       (data: {profile: Profile}) => {
+        console.log(data);
         this.profile = data.profile;
+        console.log('profile--------> ' + this.profile.username );
         // Load the current user's data.
-        this.userService.currentUser.subscribe(
-          (userData: User) => {
-            this.currentUser = userData;
-            this.isUser = (this.currentUser.username === this.profile.username);
-          }
-        );
+
+      }
+
+    );
+    this.route.data.subscribe(
+      (data: any) => {
+        this.currentUser = data.user.user;
+        console.log( data);
+        console.log(this.currentUser.username + '---- ' + this.profile.username);
+        this.isUser = (this.currentUser.username === this.profile.username);
       }
     );
   }
